@@ -2,7 +2,12 @@
 
 <!-- Display errors on page: -->
 <div class="container">
+
 	<div class="row">
+
+		<% flash.each do |name, msg| -%>
+    		<%= content_tag :div, msg, class: name %>
+		<% end -%>
 
 	<% if @user %>
 		<%= render partial: "shared/form_error_list", locals: { model: @user } %>
@@ -74,3 +79,8 @@
 <% end %>
 
 </div>
+
+
+<footer>
+	<div class="container"></div>
+</footer>
