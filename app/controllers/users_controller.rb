@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
 
 	def index
+		@user = User.new
 		if current_user
 			redirect_to user_path(:id)
 		end
@@ -23,6 +24,7 @@ class UsersController < ApplicationController
 
 	def show
 		if !current_user
+			@user = User.new
 			render :index
 		end
 	end
