@@ -1,0 +1,82 @@
+<nav class="navbar navbar-wrapper navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+
+		<div class="navbar-header">
+			<a class="navbar-brand" href=""><%= current_user.username%></a>
+		</div>
+
+		<div class="collapse navbar-collapse navbar-ex1-collapse">
+    		<div class="collapse navbar-collapse">
+
+	            <ul class="nav navbar-nav">
+	              <li class="active">
+	              	<a href="#">
+	              		<span class="glyphicon glyphicon-home"></span> Home
+	              	</a>
+	              </li>
+	              <li><a href="#"><span class="glyphicon glyphicon-star"></span> Top Destinations</a></li>
+	              <li class="dropdown">
+	                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> About Us<b class="caret"></b></a>
+	                <ul class="dropdown-menu">
+	                  <li><a href="#">Company Details</a></li>
+	                  <li><a href="#">Contact Us</a></li>
+	                </ul>
+	              </li>
+	            </ul>
+
+	            <form class="navbar-form navbar-right" role="search">
+	              <div class="form-group">
+	                <input type="text" class="form-control" placeholder="Search">
+	              </div>
+	              <button type="submit" class="btn btn-default">Submit</button>
+	            </form>
+
+	            <ul class="nav navbar-nav navbar-right">
+	              <li><a href="#"><span class="glyphicon glyphicon-asterisk"></span> Book Tickets</a></li>
+	              <li class="dropdown">
+	                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-info-sign"></span> Reservation<b class="caret"></b></a>
+	                <ul class="dropdown-menu">
+	                  <li><a href="#">Cancel</a></li>
+	                  <li><a href="#">Confirm</a></li>
+	                </ul>
+	              </li>
+	            </ul>
+
+          </div>
+
+	</div>
+</nav>
+
+
+<!-- 
+<div class="navbar navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse"></button>
+			<a class="navbar-brand" href="#">
+				Logged in as <%= current_user.username %>
+				
+			</a>
+			<button type="button" class="btn btn-link">Edit Profile</button>
+			<button type="button" class="btn btn-link">Logout</button>
+			
+		</div>
+		<div class="navbar-collapse collapse">
+			<button type="button" class="btn btn-warning navbar-right">Rate a driver</button>
+			<form class="navbar-form navbar-right">
+				
+			</form>
+		</div>
+	</div>
+</div> -->
+
+
+
+<%= render partial: 'profile_corner' %>
+
+<%= render partial: 'map_corner' %>
+
+<%= render partial: 'score_overall_corner' %>
+
+<%= render partial: 'score_reviews_corner' %>
+

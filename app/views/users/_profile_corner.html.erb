@@ -1,0 +1,11 @@
+
+
+<h4>profile corner</h4>
+
+<% if logged_in? %>           
+	Logged in as <%= current_user.username %>.
+	<%= link_to 'Logout', sessions_path, method: :delete %><br>
+	Your license plate: <%= current_user.license_plate_state %> <%= current_user.license_plate_number %><br>
+	Your car: <br><%= image_tag current_user.vehicle_image.url(:medium) %><br>
+    
+<% end %>
