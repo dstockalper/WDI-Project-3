@@ -13,20 +13,21 @@
 	              	<a href="#"><i class="fa fa-tachometer"> My Dashboard</i></a>
 	              </li>
 	              <li class="inactive">
-	              	<a href="#"><i class="fa fa-camera-retro">Edit Profile</i></a>
+	              	<a href="#"><i class="fa fa-cog"> Edit Profile</i></a>
 	              </li>
-	              <li class="inactive">
-	              	<a href="#"><i class="fa fa-camera-retro">Logout</i></a>
+	              <li class="inactive"> 
+	              	<%= link_to ' Logout', sessions_path, method: :delete, :class=>"fa fa-lock" %>
 	              </li>	
 	            </ul>
 
 	            <ul class="nav navbar-nav navbar-right">
-	            	<li>
-	            		<a href=""><i class="fa fa-automobile"> Rate a Driver</i></a>
-	            	</li>
+	            	<li class="inactive"> 
+	              		<%= link_to ' Rate a Driver', new_review_path, :class=>"fa fa-car" %>
+	              	</li>	
 	            </ul>
-
-          </div>
+	            
+	         </div>
+         </div>
 
 	</div>
-</nav>r
+</nav>

@@ -11,24 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141027063452) do
+ActiveRecord::Schema.define(version: 20141027192458) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "reviews", force: true do |t|
     t.integer  "reviewer_id"
-    t.string   "reviewer_plate_state"
-    t.string   "reviewer_plate_number"
     t.string   "reviewer_location"
-    t.integer  "reviewed_id"
-    t.string   "reviewed_plate_state"
     t.string   "reviewed_plate_number"
-    t.string   "reviewed_location"
     t.string   "review_category"
     t.string   "review_detail"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "reviewed_plate_state"
   end
 
   create_table "users", force: true do |t|

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   resources :users
 
+  resources :reviews
+
   post 'sessions' => 'sessions#create'
   delete 'sessions' => 'sessions#destroy'
 
