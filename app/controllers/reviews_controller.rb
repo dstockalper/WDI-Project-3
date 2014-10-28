@@ -21,6 +21,12 @@ class ReviewsController < ApplicationController
 
 	def create
 		@review = Review.new review_params
+		# binding.pry
+		if @review.save
+			redirect_to root_path
+		else
+			render :new
+		end
 	end
 
 
@@ -31,8 +37,22 @@ class ReviewsController < ApplicationController
 			:reviewer_location,
 			:reviewed_plate_state,
 			:reviewed_plate_number,
-			:review_category,
-			:review_detail
+			:aggressive_speeding,
+			:aggressive_weaving,
+			:aggressive_tailgating,
+			:aggressive_cutting,
+			:aggressive_rage,
+			:aggressive_other,
+			:inattentive_braking,
+			:inattentive_drifting,
+			:inattentive_phone,
+			:inattentive_pedestrian,
+			:inattentive_drunk,
+			:inattentive_other,
+			:alert_safe,
+			:alert_courteous,
+			:parking_blocking,
+			:parking_illegal
 		)
 	end	
 

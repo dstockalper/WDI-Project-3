@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141027192458) do
+ActiveRecord::Schema.define(version: 20141028210757) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,22 @@ ActiveRecord::Schema.define(version: 20141027192458) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "reviewed_plate_state"
+    t.integer  "aggressive_speeding"
+    t.integer  "aggressive_weaving"
+    t.integer  "aggressive_tailgating"
+    t.integer  "aggressive_cutting"
+    t.integer  "aggressive_rage"
+    t.integer  "aggressive_other"
+    t.integer  "inattentive_braking"
+    t.integer  "inattentive_drifting"
+    t.integer  "inattentive_phone"
+    t.integer  "inattentive_pedestrian"
+    t.integer  "inattentive_drunk"
+    t.integer  "inattentive_other"
+    t.integer  "alert_safe"
+    t.integer  "alert_courteous"
+    t.integer  "parking_blocking"
+    t.integer  "parking_illegal"
   end
 
   create_table "users", force: true do |t|

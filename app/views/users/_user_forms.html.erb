@@ -28,7 +28,8 @@
 				<%= f.password_field :password_confirmation, :placeholder => "password confirmation" %>
 			</p>
 			<p>
-				<%= f.text_field :license_plate_state, :placeholder => "State" %>
+				<%= f.select :license_plate_state, 
+			["AL", "AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY","DC","Other"] %>
 			</p>
 			<p>
 				<%= f.text_field :license_plate_number, :placeholder => "License Plate Number" %>
@@ -45,26 +46,6 @@
 	</div>
 </div>
 
-
-
-
-
-
-<h2>Login</h2>
-
-<%= form_tag sessions_path do %>
-
-    <p>
-        <%= text_field_tag :email, nil, :placeholder=>"name@example.com"%>
-    </p>
-    <p>
-        <%= password_field_tag :password, nil, :placeholder=>"password" %>
-    </p>
-    <p>
-        <%= submit_tag "Login" %>
-    </p>
-
-<% end %>
 
 </div>
 
