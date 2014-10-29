@@ -44,6 +44,8 @@ gem 'font-awesome-rails'
 # add bootstrap styling to rails forms
 gem 'bootstrap_form'
 
+gem 'geocoder'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

@@ -2,21 +2,40 @@
 <%= render partial: 'nav_show' %>
 
 
-<div class="container">
+<div class="container" ng-app='recs'>
 	<div class="row">
 		<div class="col-md-6">
 			<%= render partial: 'profile_corner' %>
 		</div>
 		<div class="col-md-6">
-			<%= render partial: 'score_overall_corner' %>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-6">
-			<%= render partial: 'map_corner' %>
-		</div>
-		<div class="col-md-6">
-			<%= render partial: 'score_reviews_corner' %>
+
+			<section class="tab" ng-controller="TabController as tab">
+				<ul class="nav nav-pills">
+					<li ng-class="{ active: tab.isSet(1) }">
+						<a href ng-click="tab.setTab(1)">Overall Rating Score</a>
+					</li>
+					<li ng-class="{ active: tab.isSet(2) }">
+						<a href ng-click="tab.setTab(2)">Map</a>
+					</li>
+					<li ng-class="{ active: tab.isSet(3) }">
+						<a href ng-click="tab.setTab(3)">Reviews Feed</a>
+					</li>
+				</ul>
+				
+				<div ng-show="tab.isSet(1)">
+					<h4>Overall Rating</h4>
+					<%= render partial: 'score_overall_corner' %>
+				</div>
+				<div ng-show="tab.isSet(2)">
+					<h4>Map</h4>
+					<%= render partial: 'map_corner' %>
+				</div>
+				<div ng-show="tab.isSet(3)">
+					<h4>Reviews Feed</h4>
+					<%= render partial: 'score_reviews_corner' %>
+				</div>
+			</section>
+
 		</div>
 	</div>
 </div>
