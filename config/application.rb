@@ -6,15 +6,18 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-# https://devcenter.heroku.com/articles/rails-4-asset-pipeline
+
 
 
 module RoadsageApp
   class Application < Rails::Application
+    # https://devcenter.heroku.com/articles/rails-4-asset-pipeline
+    config.serve_static_assets = true
+    
     # https://gist.github.com/iamatypeofwalrus/6467148
     # added the following line in attempt to get glyphicons working in bootstrap:
     config.assets.paths << Rails.root.join("vendor","assets", "fonts")
-    config.serve_static_assets = true
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
