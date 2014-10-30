@@ -1,7 +1,5 @@
 class ReviewsController < ApplicationController
 
-	
-
 	def index
 
 		@review = Review.new
@@ -10,8 +8,10 @@ class ReviewsController < ApplicationController
 			@user = User.new
 			redirect_to root_path
 		end
+
 		render json: Review.where("reviewed_plate_number = '#{current_user.license_plate_number}'")
 	end
+
 
 	def new
 		@review = Review.new
@@ -20,6 +20,8 @@ class ReviewsController < ApplicationController
 			@user = User.new
 			redirect_to root_path
 		end
+
+		
 	end
 
 
@@ -32,11 +34,12 @@ class ReviewsController < ApplicationController
 		end
 	end
 
+
 	def show
 		render json: Review.find(params[:id]).to_json
 	end
 
-
+	private
 
 	def review_params
 		params.require(:review).permit(

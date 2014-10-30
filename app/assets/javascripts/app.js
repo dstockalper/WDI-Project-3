@@ -1,6 +1,5 @@
 (function(){
 
-
 	var app = angular.module('myApp',["ngResource"])
 
 	// TabController controlls the three tab click functions
@@ -26,12 +25,35 @@
     ])
 
 	app.controller("RevController", ["ngReview", function(ngReview){
+		// setInterval(function(){
+		// 	this.allCurrentUserReviews = ngReview.query();
+		// 	console.log(this.allCurrentUserReviews);
+		// }, 3000);
+
+		
+
+		// $timeout(function() {
+		// 	this.allCurrentUserReviews = ngReview.query();
+		// 	console.log(this.allCurrentUserReviews);
+		// }, 3000);
+
 
 		this.allCurrentUserReviews = ngReview.query();
 		console.log(this.allCurrentUserReviews);
 
+		// var audio = new Audio();
+		// audio.src ='http://translate.google.com/translate_tts?ie=utf-8&tl=en&q=Hello%20World.';
+		// audio.play();
+
+		//http://updates.html5rocks.com/2014/01/Web-apps-that-talk---Introduction-to-the-Speech-Synthesis-API
+		var msg = new SpeechSynthesisUtterance();
+		msg.text="Others are reviewing you.  Check out your reviews feed tab.";
+		speechSynthesis.speak(msg);
+
 
 	}]);
 
+
 })();
+
 

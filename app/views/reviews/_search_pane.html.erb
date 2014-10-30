@@ -1,12 +1,33 @@
 <%= form_for @review, html: {class: "form-horizontal"} do |f| %>
 		
 	<div class="container">
-		<div>State</div>
-		<%= f.select :reviewed_plate_state, 
-			["AL", "AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY","DC","Other"] %>
-		<%= f.text_field :reviewed_plate_number, :placeholder=>"License Plate Number" %>
-		<img src="#">
-		<br><br><br><br><br><br>
+			<div class="row">
+				<div class="col-md-6">
+					<div>State</div>
+					<%= f.select :reviewed_plate_state, 
+						["AL", "AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY","DC","Other"] %>
+					<%= f.text_field :reviewed_plate_number, :placeholder=>"License Plate Number" %>
+					<img src="#">
+				</div>
+				<div class="col-md-6">
+					<input type="button" value="Stamp Location" onclick="showlocation()"/> 
+
+					<br>
+					Latitude: <span id="latitude">..</span><br>
+					Longitude: <span id="longitude">..</span>
+
+					<SCRIPT>
+					function showlocation(){
+						navigator.geolocation.watchPosition(callback);
+					}
+					function callback(position){
+						document.getElementById('latitude').innerHTML=position.coords.latitude;
+						document.getElementById('longitude').innerHTML=position.coords.longitude;
+					}
+					</SCRIPT>
+				</div>	
+			</div>
+				<br><br><br><br>
 			
 				<div class="row">
 					<div class="col-md-3">
@@ -55,8 +76,10 @@
 			    	</div>
 				</div>
 
-		<br><br><br><br><br><br>
+
+		<br><br><br><br>
 		<%= f.submit %>
+		<br><br>
 
 		<% end %>
 				

@@ -1,7 +1,6 @@
 
 <% if logged_in? %>           
 	Logged in as <%= current_user.email %><br>
-	License Plage: <%= current_user.license_plate_state %> <%= current_user.license_plate_number %><br>
 	Vehicle Image: <br><%= image_tag current_user.vehicle_image.url(:medium) %><br>
-    
+    <div class="license_plate"><span class="license_text"><%= current_user.license_plate_number %></span></div><br>
 <% end %>

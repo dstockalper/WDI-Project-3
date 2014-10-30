@@ -7,3 +7,71 @@
 	background-size: 1800px 600px;
 	background-repeat: no-repeat;
 }
+
+.reviewTableHeader {
+	text-align: center;
+}
+
+
+.reviewTableBody {
+	text-align: center;
+}
+
+.reviewTableCategory {
+	text-align: center;
+	font-weight: bold;
+}
+
+.aggressive{
+	background-color: #FF6347;
+}
+
+.inattentive{
+	background-color: #FFD700;
+}
+
+.alert{
+	background-color: #ADFF2F;
+}
+
+.table{
+	margin-top: 20px;
+	width: 100%;
+}
+
+.license_plate{
+	height: 150px;
+	width: 300px;
+	line-height: 160px;
+	background: url("http://www.elicenseplateframes.com/vsadmin/product/templates/thumb/53.png");	
+	background-repeat: no-repeat;
+	background-size: cover;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.license_text{
+	font-size: 50px;
+	color: #6495ED;
+}
+
+.mapDisplay{
+	height: 400px;
+	line-heigt: 200px;
+}
+
+footer{
+	background-color: #F0F0F0;
+	margin: 20px;
+}
+
+.landing_img{
+	height: 150px;
+	width: 225px;
+	border: 5px solid gray;
+}
+
+figcaption{
+	font-weight: bold;
+	padding: 5px;
+}

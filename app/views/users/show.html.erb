@@ -4,10 +4,10 @@
 
 <div class="container" ng-app='myApp'>
 	<div class="row">
-		<div class="col-md-6">
+		<div class="col-md-4">
 			<%= render partial: 'profile_corner' %>
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-8">
 
 			<section class="tab" ng-controller="TabController as tab">
 				<ul class="nav nav-pills">
@@ -23,15 +23,12 @@
 				</ul>
 				
 				<div ng-show="tab.isSet(1)">
-					<h4>Overall Rating</h4>
 					<%= render partial: 'score_overall_corner' %>
 				</div>
 				<div ng-show="tab.isSet(2)">
-					<h4>Map</h4>
 					<%= render partial: 'map_corner' %>
 				</div>
 				<div ng-show="tab.isSet(3)">
-					<h4>Reviews Feed</h4>
 					<%= render partial: 'score_reviews_corner' %>
 				</div>
 			</section>
