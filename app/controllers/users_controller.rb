@@ -24,7 +24,7 @@ class UsersController < ApplicationController
 
 	def show
 		if !current_user
-			redirect_to :index
+			redirect_to users_path and return
 		end
 
 		respond_to do |format|
