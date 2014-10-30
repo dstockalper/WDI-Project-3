@@ -50,7 +50,7 @@ gem 'geocoder'
 
 # heroku: 'Precompiling assets failed'
 # https://devcenter.heroku.com/articles/rails-4-asset-pipeline
-gem 'rails_12factor', group: :production
+gem 'rails_12factor'
 
 # Use unicorn as the app server
 # gem 'unicorn'
