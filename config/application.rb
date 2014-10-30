@@ -6,6 +6,9 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# https://devcenter.heroku.com/articles/rails-4-asset-pipeline
+config.serve_static_assets = true
+
 module RoadsageApp
   class Application < Rails::Application
     # https://gist.github.com/iamatypeofwalrus/6467148
