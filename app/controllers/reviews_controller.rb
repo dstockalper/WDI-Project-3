@@ -1,12 +1,17 @@
 class ReviewsController < ApplicationController
 
+	
+
 	def index
+
 		@review = Review.new
 
 		if !current_user
 			@user = User.new
 			redirect_to root_path
 		end
+
+		render json: Review.all
 	end
 
 	def new
@@ -27,6 +32,10 @@ class ReviewsController < ApplicationController
 		else
 			render :new
 		end
+	end
+
+	def show
+		render json: Review.find(params[:id]).to_json
 	end
 
 
