@@ -20,16 +20,16 @@
 	// Use $resource (high level $http) to query db for all reviews
 	app.factory("ngReview", ["$resource",
         function($resource){
-        	// console.log($resource)
-            return $resource("/reviews/:id");
+        	// the argument inside $resource indecates the routing: in this case the index action of reviews controller...:id gets ignored
+            return $resource("/reviews");
         }
     ])
 
 	app.controller("RevController", ["ngReview", function(ngReview){
 
-		this.allReviews = ngReview.query();
+		this.allCurrentUserReviews = ngReview.query();
+		console.log(this.allCurrentUserReviews);
 
-		console.log(this.allReviews);
 
 	}]);
 

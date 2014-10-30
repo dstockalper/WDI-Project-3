@@ -1,9 +1,8 @@
-<h4>score individual reviews (real time) corner</h4>
 
-
-
-<section ng-controller="RevController as rev">
-	
+<section ng-controller="RevController as ctrl">
+	<div ng-repeat="review in ctrl.allCurrentUserReviews">
+		<span>{{ review.reviewed_plate_number }}</span>
+	</div>
 
 </section>
 

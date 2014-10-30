@@ -10,8 +10,7 @@ class ReviewsController < ApplicationController
 			@user = User.new
 			redirect_to root_path
 		end
-
-		render json: Review.all
+		render json: Review.where("reviewed_plate_number = '#{current_user.license_plate_number}'")
 	end
 
 	def new
@@ -26,7 +25,6 @@ class ReviewsController < ApplicationController
 
 	def create
 		@review = Review.new review_params
-		# binding.pry
 		if @review.save
 			redirect_to root_path
 		else
