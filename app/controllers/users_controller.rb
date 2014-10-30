@@ -27,8 +27,19 @@ class UsersController < ApplicationController
 
 	def show
 		if !current_user
-			@user = User.new
-			render :index
+			redirect_to :index
+		end
+
+		respond_to do |format|
+			format.html
+
+			format.json do
+				render json: Review.all
+			end
+
+			format.xml do
+				render xml: current_user
+			end
 		end
 	end
 
