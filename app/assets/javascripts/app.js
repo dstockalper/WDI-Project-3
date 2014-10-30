@@ -49,7 +49,7 @@
 		var msg = new SpeechSynthesisUtterance();
 		msg.text="Others are reviewing you.  Check out your reviews feed tab.";
 		speechSynthesis.speak(msg);
-
+		console.log(msg);
 
 	}]);
 
