@@ -16,8 +16,6 @@ class UsersController < ApplicationController
 		if @user.save
 			session[:current_user_id] = @user.id
 			redirect_to user_path(:id) 
-			# the above line needs to create sessions too 
-			# for new user to be logged in upon registration
 		else
 			render :index
 		end
